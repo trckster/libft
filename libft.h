@@ -6,7 +6,7 @@
 /*   By: bkayleen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 19:14:29 by bkayleen          #+#    #+#             */
-/*   Updated: 2019/09/17 19:17:58 by bkayleen         ###   ########.fr       */
+/*   Updated: 2019/09/17 19:47:55 by bkayleen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,7 @@
 # define LIBFT_H
 
 int		ft_isdigit(int a);
+int		ft_isalpha(int a);
+int		ft_isalnum(int a);
 
 #endif
