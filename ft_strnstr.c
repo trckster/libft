@@ -6,7 +6,7 @@
 /*   By: bkayleen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 16:22:05 by bkayleen          #+#    #+#             */
-/*   Updated: 2019/09/19 16:32:42 by bkayleen         ###   ########.fr       */
+/*   Updated: 2019/09/19 17:51:46 by bkayleen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *h, const char *n, size_t all)
 	if (!n_len)
 		return ((char *)h);
 	i = 0;
-	while (i + n_len <= h_len && i < (int)all)
+	while (i + n_len <= h_len && i + n_len < (int)all)
 	{
 		if (ft_strncmp(n, ((char *)h) + i, n_len))
 			i++;
