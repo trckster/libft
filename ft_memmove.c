@@ -6,7 +6,7 @@
 /*   By: bkayleen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 22:00:09 by bkayleen          #+#    #+#             */
-/*   Updated: 2019/09/20 20:36:57 by bkayleen         ###   ########.fr       */
+/*   Updated: 2019/09/20 21:50:42 by bkayleen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (dst);
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
+	i = d < s ? -1 : len - 1;
 	if (d < s)
-	{
-		i = -1;
 		while (++i < len)
 			d[i] = s[i];
-	}
 	else
-	{
-		i = len - 1;
 		while (1)
 		{
 			d[i] = s[i];
@@ -40,6 +36,5 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 				break ;
 			i--;
 		}
-	}
 	return (dst);
 }

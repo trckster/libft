@@ -6,7 +6,7 @@
 /*   By: bkayleen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 20:44:40 by bkayleen          #+#    #+#             */
-/*   Updated: 2019/09/19 20:49:20 by bkayleen         ###   ########.fr       */
+/*   Updated: 2019/09/20 21:37:52 by bkayleen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	*ft_memalloc(size_t size)
 {
 	void	*d;
 
-	d = malloc(size);
+	if (!(d = malloc(size)))
+		return (0);
 	ft_bzero(d, size);
 	return (d);
 }
