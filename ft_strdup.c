@@ -6,7 +6,7 @@
 /*   By: bkayleen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 14:38:07 by bkayleen          #+#    #+#             */
-/*   Updated: 2019/09/19 14:55:12 by bkayleen         ###   ########.fr       */
+/*   Updated: 2019/09/20 20:38:03 by bkayleen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char	*ft_strdup(const char *s)
 	int		len;
 
 	len = ft_strlen(s);
-	res = (char *)malloc(len + 1);
+	if (!(res = (char *)malloc(len + 1)))
+		return (0);
 	res[len] = 0;
 	i = 0;
 	while (i < len)
