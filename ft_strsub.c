@@ -6,7 +6,7 @@
 /*   By: bkayleen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 21:34:24 by bkayleen          #+#    #+#             */
-/*   Updated: 2019/09/19 21:44:59 by bkayleen         ###   ########.fr       */
+/*   Updated: 2019/09/20 22:41:46 by bkayleen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*res;
 
+	if (!s)
+		return (0);
 	if (!(res = (char *)malloc(len + 1)))
 		return (0);
 	i = 0;

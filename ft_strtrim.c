@@ -6,7 +6,7 @@
 /*   By: bkayleen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 21:49:13 by bkayleen          #+#    #+#             */
-/*   Updated: 2019/09/20 18:55:53 by bkayleen         ###   ########.fr       */
+/*   Updated: 2019/09/20 22:42:23 by bkayleen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ char		*ft_strtrim(char const *s)
 	int		i;
 	char	*res;
 
+	if (!s)
+		return (0);
 	start = 0;
 	end = ft_strlen(s) - 1;
 	while (s[start] && ft_istotrim(s[start]))

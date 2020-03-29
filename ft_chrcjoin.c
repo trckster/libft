@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_chrcjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkayleen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 19:04:17 by bkayleen          #+#    #+#             */
-/*   Updated: 2019/09/20 22:44:17 by bkayleen         ###   ########.fr       */
+/*   Created: 2019/10/23 23:17:29 by bkayleen          #+#    #+#             */
+/*   Updated: 2019/10/23 23:17:34 by bkayleen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+void	ft_chrcjoin(char **s, char chr)
 {
-	int i;
+	char	*tmp;
+	char	*n;
 
-	if (!s)
-		return ;
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	n = (char *)malloc(sizeof(n) * 2);
+	n[0] = chr;
+	n[1] = 0;
+
+	tmp = *s;
+	*s = ft_strjoin(*s, n);
+	free(tmp);
+	free(n);
 }

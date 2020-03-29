@@ -1,27 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkayleen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 19:04:17 by bkayleen          #+#    #+#             */
-/*   Updated: 2019/09/20 22:44:17 by bkayleen         ###   ########.fr       */
+/*   Created: 2019/12/07 16:12:09 by bkayleen          #+#    #+#             */
+/*   Updated: 2019/12/07 16:12:11 by bkayleen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+void	ft_printf(char *pattern, ...)
 {
-	int i;
+	va_list		args;
+	int 		i;
 
-	if (!s)
-		return ;
+	va_start(args, pattern);
 	i = 0;
-	while (s[i])
+	while (pattern[i])
 	{
-		ft_putchar_fd(s[i], fd);
+		if (pattern[i] == '%')
+		{
+			i++;
+			if (pattern[i] == 's')
+				ft_putstr(va_arg(args, char *));
+			else if (pattern[i] == 'd')
+				ft_putnbr(va_arg(args, int));
+			else if (pattern[i] == 'c')
+				ft_putchar((char)va_arg(args, int));
+			else
+				ft_putchar(pattern[--i]);
+		}
+		else
+			ft_putchar(pattern[i]);
 		i++;
 	}
+
+	va_end(args);
 }

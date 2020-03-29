@@ -6,13 +6,11 @@
 /*   By: bkayleen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 18:56:35 by bkayleen          #+#    #+#             */
-/*   Updated: 2019/09/20 19:57:48 by bkayleen         ###   ########.fr       */
+/*   Updated: 2019/09/20 22:55:39 by bkayleen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stdio.h>
 
 static int	ft_count_strings(char const *s, char c)
 {
@@ -64,6 +62,8 @@ char		**ft_strsplit(char const *s, char c)
 	int		i;
 	int		res_i;
 
+	if (!s)
+		return (0);
 	i = 0;
 	res_i = 0;
 	cnt = ft_count_strings(s, c);

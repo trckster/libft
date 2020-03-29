@@ -6,7 +6,7 @@
 /*   By: bkayleen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 21:27:20 by bkayleen          #+#    #+#             */
-/*   Updated: 2019/09/19 21:30:50 by bkayleen         ###   ########.fr       */
+/*   Updated: 2019/09/20 22:40:23 by bkayleen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 	char	*res;
 
+	if (!s)
+		return (0);
 	i = 0;
 	if (!(res = (char *)malloc(ft_strlen(s) + 1)))
 		return (0);
@@ -25,5 +27,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		res[i] = f(i, s[i]);
 		i++;
 	}
+	res[i] = 0;
 	return (res);
 }

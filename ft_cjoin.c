@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_cjoin.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bkayleen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/19 19:04:17 by bkayleen          #+#    #+#             */
-/*   Updated: 2019/09/20 22:44:17 by bkayleen         ###   ########.fr       */
+/*   Created: 2019/10/23 22:30:08 by bkayleen          #+#    #+#             */
+/*   Updated: 2019/10/23 22:36:33 by bkayleen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+void	ft_cjoin(char **s, char *addition)
 {
-	int i;
+	char	*tmp;
 
-	if (!s)
-		return ;
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	tmp = *s;
+	*s = ft_strjoin(*s, addition);
+	free(tmp);
 }
